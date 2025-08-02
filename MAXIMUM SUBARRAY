@@ -1,0 +1,14 @@
+MAXIMUM SUBARRAY[LEETCODE 53]
+
+class Solution {
+    public int maxSubArray(int[] nums) {
+        
+        int overallMaxsum=nums[0],currentMaxsum=nums[0];
+        for(int i=1;i<nums.length;i++)
+        {
+            currentMaxsum=Math.max(nums[i],nums[i]+currentMaxsum);
+            overallMaxsum=Math.max(currentMaxsum,overallMaxsum);
+        }
+        return overallMaxsum;
+    }
+}
